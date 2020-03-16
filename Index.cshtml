@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_LayoutGeneral.cshtml";
+}
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Look Book - Sistema de Gestión de Libros</title>
+<link href="https://fonts.googleapis.com/css?family=Advent+Pro|Spartan&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        /* Propiedades de color */
+        background-color: #fff;
+    }
+
+    main {
+        width: 100%;
+    }
+
+        main img {
+            margin-top: 0;
+            width: 100%;
+            height: 250px;
+            display: flex;
+        }
+
+    .intro {
+        /* Fuente */
+        font-family: 'Spartan', sans-serif;
+        float: left;
+        font-size: medium;
+        padding: 10px;
+        text-indent: 30px;
+    }
+
+    #final:link{
+        color:black;
+    }
+
+    #final hoover{
+        color:aqua;
+    }
+
+    #final:visited{
+        color:black;
+    }
+
+</style>
+
+
+<img src="~/Imgs/librarybooks.jpg" />
+
+<p class="intro"><strong>Look Book</strong> es un <strong>sistema de gestión de libros</strong> que te permite <strong>almacenar una base de datos</strong> de los libros de tu biblioteca, guardando información como <b>autores, géneros, editoriales y fecha de publicación</b>.</p>
+<p class="intro"><b>Look Book</b> no sólo te permite <b>acceder a la información guardada,</b> sino también <strong>agregar</strong> y <strong>eliminar</strong> <b>items</b> de ella.</p>
+
+<br />
+<a id="final" href="/Library/ViewAll"><p class="intro"><b>Bienvenido/a a Look Book!</b></p></a>

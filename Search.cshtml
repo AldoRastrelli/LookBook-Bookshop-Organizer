@@ -1,0 +1,52 @@
+﻿@using LookBook.Models
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_LayoutGeneral.cshtml";
+}
+<title>Look Book - Buscar</title>
+<link href="https://fonts.googleapis.com/css?family=Advent+Pro|Spartan&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+@{
+    LibraryDataBase db = new LibraryDataBase();
+    List<Genre> genreList = db.Genres.ToList();
+    string thisGenre = this.Model.GenreType;
+}
+<style>
+    body {
+        margin: 8px;
+    }
+</style>
+
+<form method="post">
+
+    <h3>Buscar Libro</h3>
+
+    <label for="txtTitle">Título</label>
+    <input type="text" id="txtTitle" name="Title" value="@this.Model.Title"
+           class="form-control" placeholder="Inserte el título buscado"  />
+
+    <label for="txtAuthor">Autor</label>
+    <input type="text" id="txtAuthor" name="Author" value="@this.Model.Author" class="form-control" placeholder="Inserte el autor buscado"  />
+
+    <label for="txtGenre">Género</label>
+    <select id="txtGenreType" name="GenreType" class="form-control">
+        @{
+
+            foreach (Genre g in genreList)
+            {
+                <option>@g.GenreType</option>
+            }
+        }
+        <option selected> </option>
+    </select>
+
+
+    <label for="txtPublisher">Editorial</label>
+    <input type="text" id="txtPublisher" name="Publisher" value="@this.Model.Publisher" class="form-control" placeholder="Inserte la editorial buscada" />
+
+    <button class="btn btn-info btn-block" style="margin-top:1em">Buscar</button>
+    <a href="/Home/Index" class="btn btn-danger btn-block" style="margin-top:1em">Cancelar</a>
+
+</form>

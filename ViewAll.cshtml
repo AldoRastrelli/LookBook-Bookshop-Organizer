@@ -1,0 +1,58 @@
+﻿@using LookBook.Models
+
+@{
+    ViewBag.Title = "ViewAll";
+    Layout = "~/Views/Shared/_LayoutGeneral.cshtml";
+}
+<title>Look Book - Ver Todos</title>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<style>
+    body {
+        margin: 8px;
+    }
+
+    #Button{
+        margin-top:40px;
+        margin-bottom: 10px;
+    }
+
+
+</style>
+
+
+<div>
+    <a id="Button" href="/Library/AddNew" class="btn btn-primary glyphicon glyphicon-plus"></a>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Género</th>
+            <th>Editorial</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Book book in this.Model)
+        {
+            
+            <tr>
+                <td>@book.ID</td>
+                <td>@book.Title</td>
+                <td>@book.Author.AuthorName</td>
+                <td>@book.Genre.GenreType</td>
+                <td>@book.Publisher.PublisherName</td>
+                <td><a href="/Library/Edit/@book.ID" class="btn btn-primary glyphicon glyphicon-pencil"></a></td>
+                <td><a href="/Library/Delete/@book.ID" class="btn btn-danger glyphicon glyphicon-trash"></a></td>
+
+            </tr>
+         }
+    </tbody>
+</table>
+
+

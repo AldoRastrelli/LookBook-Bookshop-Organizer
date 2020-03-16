@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Spartan&display=swap" rel="stylesheet">
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Propiedades de color */
+            background-color: #fff;
+            margin: 8px;
+        }
+
+        .logo {
+            /* Propiedades de tamaño */
+            height: 70px;
+            float: left;
+            margin: 3px;
+        }
+
+        #instagram {
+            height: 30px;
+            float: right;
+            margin: 3px;
+        }
+
+            #instagram:hover {
+                opacity: 0.5;
+            }
+
+
+        header {
+            height: 100px;
+        }
+
+        #title {
+            /* Fuente */
+            font-family: 'Advent Pro', sans-serif;
+            font-weight: bold;
+            float: left;
+            font-size: large;
+            /* Propiedades de tamaño */
+            height: 50px;
+            margin: 3px;
+            padding-top: 12px;
+            /* Alineación */
+            align-items: center;
+            display: flex;
+        }
+
+
+        nav, nav div {
+            /* Propiedades del tamaño */
+            width: 100%;
+            height: 40px;
+            /* Propiedades del color */
+            background-color: #69bae8;
+            /* Propiedades de alineación */
+            display: flex;
+        }
+
+            nav a {
+                color: white;
+                text-decoration: none;
+                text-transform: uppercase;
+                text-align: center;
+                font: message-box;
+                font-size: small;
+                line-height: 30px;
+                padding: 5px;
+                width: 25%;
+            }
+
+                nav a:hover {
+                    background-color: #8cc7e9;
+                    color: white;
+                    text-decoration: none;
+                    /* width: 50px; */
+                }
+
+                nav a:visited {
+                    text-decoration: none;
+                }
+
+        main {
+            height: 350px;
+        }
+
+
+        footer {
+            font-family: 'Spartan', sans-serif;
+            width: 100%;
+            height: 15px;
+            clear: both;
+            position: page;
+            text-align: center;
+            line-height: 100px;
+            font-size: 10px;
+            padding: 90px;
+        }
+
+            footer a {
+                text-decoration: none;
+                height: 10px;
+            }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div>
+
+            <a href="/Home/Index"><img class="logo" src="~/Imgs/Lookbook.png" /></a>
+            <h1 id="title">SISTEMA DE GESTIÓN DE LIBROS</h1>
+        </div>
+        <div>
+            <a href="https://instagram.com/letslookbook?igshid=1s8b9b1wp4epu" target="_blank"><img id="instagram" src="https://cdn4.iconfinder.com/data/icons/social-media-2146/512/25_social-512.png" target="_blank" alt="Logo Instagram" /></a>
+        </div>
+    </header>
+
+
+    <nav>
+        <div>
+            <a href="/Library/Search">Buscar Libro</a>
+            <a href="/Library/AddNew">Nuevo libro</a>
+            <a href="/Library/ViewAll">Ver todos</a>
+            <a href="/Home/About">Más información</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+    </main>
+
+
+    <footer>
+        <a href="https://www.linkedin.com/in/aldanarastrelli/"  target="_blank"><p>&copy; @DateTime.Now.Year - Aldana Rastrelli</p></a>
+    </footer>
+
+</body>
+
+</html>

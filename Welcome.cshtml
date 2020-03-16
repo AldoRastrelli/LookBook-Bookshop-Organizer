@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Welcome";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        form {
+            display: none;
+            text-align: center;
+            width: 700px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* bring your own prefixes */
+            transform: translate(-50%, -50%);
+        }
+
+        #welcome {
+            font-family: 'Spartan', sans-serif;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        form a {
+            width: 200px;
+        }
+
+        form p img {
+            width: 400px;
+        }
+    </style>
+
+    <title>Look Book - Sistema de Gestión de Libros</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Advent+Pro|Spartan&display=swap" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            $("form").fadeIn(2000);
+        });
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <p id="welcome">Bienvenido/a a</p>
+        <p><img style="align-self: center;" src="~/Imgs/Lookbook.png" /></p><br>
+        <p><a href="/Home/Index" class="btn" style="margin-top:1em; background-color: #69bae8; color: white;">Continuar</a></p>
+    </form>
+</body>
+
+</html>

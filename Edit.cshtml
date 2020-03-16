@@ -1,0 +1,61 @@
+﻿@using LookBook.Models
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutGeneral.cshtml";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<title>Look Book - Edit/AddNew</title>
+@{
+    LibraryDataBase db = new LibraryDataBase();
+    List<Genre> genreList = db.Genres.ToList();
+    string thisGenre = this.Model.GenreType;
+
+}
+
+<style>
+    body {
+        margin: 8px;
+    }
+</style>
+
+<form method="post">
+
+    <h3>@ViewBag.Description</h3>
+
+    <label for="txtID">Código</label>
+    <input type="text" id="txtID" name="BookRef" value="@this.Model.BookRef"
+           class="form-control" required readonly />
+
+    <label for="txtTitle">Título</label>
+    <input type="text" id="txtTitle" name="Title" value="@this.Model.Title"
+           class="form-control" required />
+
+    <label for="txtAuthor">Autor</label>
+    <input type="text" id="txtAuthor" name="Author" value="@this.Model.Author" class="form-control" required />
+
+    <label for="txtGenre">Género</label>
+    <select id="txtGenreType" name="GenreType" class="form-control">
+        @{
+
+            foreach (Genre g in genreList)
+            {
+                if (@g.GenreType == @thisGenre)
+                {
+                    <option selected>@g.GenreType</option>
+                }
+                else
+                {
+                    <option>@g.GenreType</option>
+                }
+            }
+        }
+    </select>
+
+    <label for="txtPublisher">Editorial</label>
+    <input type="text" id="txtPublisher" name="Publisher" value="@this.Model.Publisher" class="form-control" required />
+
+    <button class="btn btn-primary btn-block" style="margin-top:1em">Guardar</button>
+    <a href="/Library/ViewAll" class="btn btn-danger btn-block" style="margin-top:1em">Cancelar</a>
+
+</form>

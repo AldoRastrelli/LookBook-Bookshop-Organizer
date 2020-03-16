@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_LayoutGeneral.cshtml";
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Look Book - Sistema de Gestión de Libros</title>
+<link href="https://fonts.googleapis.com/css?family=Advent+Pro|Spartan&display=swap" rel="stylesheet">
+<link href="~/Styles/Tooltip.html" rel="stylesheet" />
+
+<script>
+    $(document).ready(function () {
+        $(".imgs").fadeIn(500);
+    });
+</script>
+
+<style>
+
+    body {
+        margin: 8px;
+    }
+
+    .body-content {
+        margin-top: 30px;
+    }
+
+    .intro {
+        /* Fuente */
+        font-family: 'Spartan', sans-serif;
+        float: left;
+        font-size: medium;
+        padding: 10px;
+        text-indent: 30px;
+    }
+
+    .imgs {
+        text-align: center
+    }
+
+        .imgs img {
+            width: 120px;
+            margin: 20px;
+        }
+
+            .imgs img:hover {
+                opacity: 0.85
+            }
+</style>
+
+<div class="body-content">
+
+    <p class="intro">Gracias por interesarte en <strong>Look Book</strong>! En los siguientes sitios podrás encontrar <b>más información</b> con respecto al proyecto:</p>
+
+    <div class="imgs">
+        <a href="https://github.com/aldanarastrelli" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-github-512.png" title="Ver Código" /></a>
+        <a href="https://www.linkedin.com/in/aldanarastrelli/" target="_blank"><img src="https://cdn4.iconfinder.com/data/icons/miu-flat-social/60/linkedin-512.png" title="Ver Perfil Desarrolladora" /></a>
+        <a href="mailto:lookbookwebapp@gmail.com?Subject=LookBook" target="_blank"><img src="https://cdn2.iconfinder.com/data/icons/social-icons-circular-color/512/gmail-512.png" title="Contacto" /></a>
+    </div>
+
+</div>
